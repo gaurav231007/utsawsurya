@@ -17,7 +17,7 @@
     "@context": "https://schema.org",
     "@type": "Store",
     "name": "Utsaw Surya",
-    "image": "https://via.placeholder.com/1200x800?text=Utsaw+Surya",
+    "image": "https://source.unsplash.com/1200x800/?kitchen,utensils",
     "telephone": "+919229219230",
     "email": "utsawkitchen01@gmail.com",
     "address": {
@@ -74,7 +74,7 @@
           </ul>
         </div>
         <div class="hero-media">
-          <img class="product-large" src="https://via.placeholder.com/700x540?text=Premium+Pressure+Cooker" alt="Premium pressure cooker - Utsaw Surya">
+          <img class="product-large" src="https://source.unsplash.com/900x700/?pressure-cooker,kitchen" alt="Premium pressure cooker - Utsaw Surya">
         </div>
       </div>
     </section>
@@ -108,10 +108,9 @@
       <div class="products-grid">
         <!-- Product Card -->
         <article class="product-card">
-          <img loading="lazy" src="https://via.placeholder.com/600x400?text=Classic+Cooker" alt="Classic Pressure Cooker">
+          <img loading="lazy" src="https://source.unsplash.com/600x400/?pressure-cooker" alt="Classic Pressure Cooker">
           <div class="product-body">
             <h3>Classic Pressure Cooker</h3>
-            <p class="price">₹3,299</p>
             <p class="desc">Stainless steel body with precision safety valves. Available in 3L, 5L, 7L.</p>
             <div class="card-cta">
               <a class="btn" href="#contact">Enquire</a>
@@ -121,10 +120,9 @@
         </article>
 
         <article class="product-card">
-          <img loading="lazy" src="https://via.placeholder.com/600x400?text=Deluxe+Gas+Stove" alt="Deluxe Gas Stove">
+          <img loading="lazy" src="https://source.unsplash.com/600x400/?gas-stove,kitchen" alt="Deluxe Gas Stove">
           <div class="product-body">
             <h3>Deluxe Gas Stove</h3>
-            <p class="price">₹8,499</p>
             <p class="desc">High-efficiency burners, elegant enamel finish, easy-clean design.</p>
             <div class="card-cta">
               <a class="btn" href="#contact">Enquire</a>
@@ -134,10 +132,9 @@
         </article>
 
         <article class="product-card">
-          <img loading="lazy" src="https://via.placeholder.com/600x400?text=Premium+Cookware+Set" alt="Cookware Set">
+          <img loading="lazy" src="https://source.unsplash.com/600x400/?cookware,kitchen" alt="Premium Cookware Set">
           <div class="product-body">
             <h3>Premium Cookware Set</h3>
-            <p class="price">₹6,199</p>
             <p class="desc">Non-stick, scratch-resistant, balanced heat distribution.</p>
             <div class="card-cta">
               <a class="btn" href="#contact">Enquire</a>
@@ -153,19 +150,19 @@
       <h2>Product Categories</h2>
       <div class="category-grid">
         <div class="category">
-          <img src="https://via.placeholder.com/480x320?text=Pressure+Cookers" alt="Pressure Cookers">
+          <img src="https://source.unsplash.com/480x320/?pressure-cooker" alt="Pressure Cookers">
           <h4>Pressure Cookers</h4>
         </div>
         <div class="category">
-          <img src="https://via.placeholder.com/480x320?text=Gas+Stoves" alt="Gas Stoves">
+          <img src="https://source.unsplash.com/480x320/?gas-stove" alt="Gas Stoves">
           <h4>Gas Stoves</h4>
         </div>
         <div class="category">
-          <img src="https://via.placeholder.com/480x320?text=Cookware" alt="Cookware">
+          <img src="https://source.unsplash.com/480x320/?cookware" alt="Cookware">
           <h4>Cookware & Sets</h4>
         </div>
         <div class="category">
-          <img src="https://via.placeholder.com/480x320?text=Kitchen+Essentials" alt="Kitchen Essentials">
+          <img src="https://source.unsplash.com/480x320/?kitchen-utensils" alt="Kitchen Essentials">
           <h4>Kitchen Essentials</h4>
         </div>
       </div>
@@ -231,10 +228,10 @@
     <section id="gallery" class="section container gallery">
       <h2>Image Gallery</h2>
       <div class="gallery-grid">
-        <img loading="lazy" src="https://via.placeholder.com/800x600?text=Gallery+1" alt="gallery">
-        <img loading="lazy" src="https://via.placeholder.com/800x600?text=Gallery+2" alt="gallery">
-        <img loading="lazy" src="https://via.placeholder.com/800x600?text=Gallery+3" alt="gallery">
-        <img loading="lazy" src="https://via.placeholder.com/800x600?text=Gallery+4" alt="gallery">
+        <img loading="lazy" src="https://source.unsplash.com/800x600/?kitchen,cookware" alt="gallery">
+        <img loading="lazy" src="https://source.unsplash.com/800x600/?kitchen,stove" alt="gallery">
+        <img loading="lazy" src="https://source.unsplash.com/800x600/?kitchen,utensils" alt="gallery">
+        <img loading="lazy" src="https://source.unsplash.com/800x600/?cooking,food" alt="gallery">
       </div>
     </section>
 
@@ -317,4 +314,39 @@
       </div>
     </div>
     <div class="container copyright">
-      <small>&copy; 
+      <small>&copy; Utsaw Surya — All rights reserved</small>
+    </div>
+  </footer>
+
+  <script>
+    // Small JS: nav toggle and smooth scrolling
+    document.getElementById('navToggle').addEventListener('click', function(){
+      var links = document.getElementById('navLinks');
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('open');
+    });
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+      anchor.addEventListener('click', function(e){
+        var target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+    // Basic form handlers to prevent page reload (can be hooked to a real endpoint)
+    document.getElementById('dealerForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thank you — your dealer enquiry has been recorded. We will contact you soon.');
+      this.reset();
+    });
+    document.getElementById('newsletterForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thank you for subscribing to our newsletter.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
