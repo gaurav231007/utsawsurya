@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#2b1f1a" />
+  <text x="40" y="80" font-family="Playfair Display, serif" font-size="48" fill="#fff">Premium Pressure Cooker</text>
+  <g transform="translate(40,140)">
+    <rect x="0" y="0" width="680" height="420" rx="12" fill="#ffffff11"/>
+    <text x="40" y="220" font-size="22" fill="#fff">Pressure Cooker Image Placeholder</text>
+  </g>
+</svg>

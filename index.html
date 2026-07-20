@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.3">
   <meta name="theme-color" content="#472d20">
   <!-- Schema.org JSON-LD for LocalBusiness -->
   <script type="application/ld+json">
@@ -17,7 +17,7 @@
     "@context": "https://schema.org",
     "@type": "Store",
     "name": "Utsaw Surya",
-    "image": "https://source.unsplash.com/1200x800/?kitchen,utensils",
+    "image": "assets/images/featured-1.svg",
     "telephone": "+919229219230",
     "email": "utsawkitchen01@gmail.com",
     "address": {
@@ -74,7 +74,7 @@
           </ul>
         </div>
         <div class="hero-media">
-          <img class="product-large" src="https://source.unsplash.com/900x700/?pressure-cooker,kitchen" alt="Premium pressure cooker - Utsaw Surya">
+          <img class="product-large" src="assets/images/featured-1.svg" srcset="assets/images/featured-1.svg 1600w, assets/images/featured-1.svg 900w" sizes="(max-width: 900px) 100vw, 420px" alt="Premium cookware banner - Utsaw Surya">
         </div>
       </div>
     </section>
@@ -108,7 +108,7 @@
       <div class="products-grid">
         <!-- Product Card -->
         <article class="product-card">
-          <img loading="lazy" src="https://source.unsplash.com/600x400/?pressure-cooker" alt="Classic Pressure Cooker">
+          <img loading="lazy" src="assets/images/featured-1.svg" alt="Classic Pressure Cooker">
           <div class="product-body">
             <h3>Classic Pressure Cooker</h3>
             <p class="desc">Stainless steel body with precision safety valves. Available in 3L, 5L, 7L.</p>
@@ -120,7 +120,7 @@
         </article>
 
         <article class="product-card">
-          <img loading="lazy" src="https://source.unsplash.com/600x400/?gas-stove,kitchen" alt="Deluxe Gas Stove">
+          <img loading="lazy" src="assets/images/featured-2.svg" alt="Deluxe Gas Stove">
           <div class="product-body">
             <h3>Deluxe Gas Stove</h3>
             <p class="desc">High-efficiency burners, elegant enamel finish, easy-clean design.</p>
@@ -132,7 +132,7 @@
         </article>
 
         <article class="product-card">
-          <img loading="lazy" src="https://source.unsplash.com/600x400/?cookware,kitchen" alt="Premium Cookware Set">
+          <img loading="lazy" src="assets/images/featured-3.svg" alt="Premium Cookware Set">
           <div class="product-body">
             <h3>Premium Cookware Set</h3>
             <p class="desc">Non-stick, scratch-resistant, balanced heat distribution.</p>
@@ -150,19 +150,19 @@
       <h2>Product Categories</h2>
       <div class="category-grid">
         <div class="category">
-          <img src="https://source.unsplash.com/480x320/?pressure-cooker" alt="Pressure Cookers">
+          <img src="assets/images/featured-1.svg" alt="Pressure Cookers">
           <h4>Pressure Cookers</h4>
         </div>
         <div class="category">
-          <img src="https://source.unsplash.com/480x320/?gas-stove" alt="Gas Stoves">
+          <img src="assets/images/featured-4.svg" alt="Gas Stoves">
           <h4>Gas Stoves</h4>
         </div>
         <div class="category">
-          <img src="https://source.unsplash.com/480x320/?cookware" alt="Cookware">
+          <img src="assets/images/featured-3.svg" alt="Cookware">
           <h4>Cookware & Sets</h4>
         </div>
         <div class="category">
-          <img src="https://source.unsplash.com/480x320/?kitchen-utensils" alt="Kitchen Essentials">
+          <img src="assets/images/featured-2.svg" alt="Kitchen Essentials">
           <h4>Kitchen Essentials</h4>
         </div>
       </div>
@@ -228,10 +228,10 @@
     <section id="gallery" class="section container gallery">
       <h2>Image Gallery</h2>
       <div class="gallery-grid">
-        <img loading="lazy" src="https://source.unsplash.com/800x600/?kitchen,cookware" alt="gallery">
-        <img loading="lazy" src="https://source.unsplash.com/800x600/?kitchen,stove" alt="gallery">
-        <img loading="lazy" src="https://source.unsplash.com/800x600/?kitchen,utensils" alt="gallery">
-        <img loading="lazy" src="https://source.unsplash.com/800x600/?cooking,food" alt="gallery">
+        <img loading="lazy" src="assets/images/featured-3.svg" alt="gallery">
+        <img loading="lazy" src="assets/images/featured-4.svg" alt="gallery">
+        <img loading="lazy" src="assets/images/featured-2.svg" alt="gallery">
+        <img loading="lazy" src="assets/images/featured-1.svg" alt="gallery">
       </div>
     </section>
 
@@ -337,16 +337,22 @@
       });
     });
     // Basic form handlers to prevent page reload (can be hooked to a real endpoint)
-    document.getElementById('dealerForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Thank you — your dealer enquiry has been recorded. We will contact you soon.');
-      this.reset();
-    });
-    document.getElementById('newsletterForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Thank you for subscribing to our newsletter.');
-      this.reset();
-    });
+    var dealerForm = document.getElementById('dealerForm');
+    if(dealerForm){
+      dealerForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Thank you — your dealer enquiry has been recorded. We will contact you soon.');
+        this.reset();
+      });
+    }
+    var newsletterForm = document.getElementById('newsletterForm');
+    if(newsletterForm){
+      newsletterForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Thank you for subscribing to our newsletter.');
+        this.reset();
+      });
+    }
   </script>
 </body>
 </html>
