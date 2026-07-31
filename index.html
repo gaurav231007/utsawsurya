@@ -2,357 +2,423 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Utsaw Surya — Premium Indian Kitchenware</title>
-  <meta name="description" content="Utsaw Surya — Premium pressure cookers, gas stoves, cookware & kitchen essentials. Luxury Indian design, trusted quality.">
-  <meta name="keywords" content="Utsaw Surya, pressure cooker, gas stove, cookware, kitchenware, Indian cookware">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Utsaw Surya — Premium Pressure Cookers & Indian Kitchenware</title>
+  <meta name="description" content="Utsaw Surya — High-performance pressure cookers, toughened glass gas stoves, granite cookware & kitchen essentials. Crafted with premium materials in Motihari, Bihar.">
+  <meta name="keywords" content="Utsaw Surya, pressure cooker, gas stove, cookware, kitchenware, Motihari kitchenware, triply cooker, Indian cookware distributor">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=1.4">
-  <meta name="theme-color" content="#472d20">
-  <!-- Schema.org JSON-LD for LocalBusiness -->
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.0">
+  <meta name="theme-color" content="#2A170E">
+  
+  <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Store",
     "name": "Utsaw Surya",
-    "image": "assets/images/featured-1.svg",
+    "image": "assets/images/logo-hero.jpg",
     "telephone": "+919229219230",
     "email": "utsawkitchen01@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Utsaw Surya, near Trends Mall, Arya Samaj Chowk",
       "addressLocality": "Motihari",
+      "addressRegion": "Bihar",
       "postalCode": "845401",
       "addressCountry": "IN"
     },
-    "url": "https://github.com/gaurav231007/utsavsurya"
+    "url": "https://github.com/gaurav231007/utsavsurya",
+    "priceRange": "₹1000 - ₹10000"
   }
   </script>
 </head>
 <body>
-  <a id="top"></a>
+
+  <!-- Site Header -->
   <header class="site-header">
-    <nav class="nav container" id="nav">
-      <div class="brand">
-        <img src="assets/images/logo.svg" alt="Utsaw Surya logo" class="logo"/>
+    <nav class="nav container">
+      <a href="#hero" class="brand">
+        <img src="assets/images/logo-hero.jpg" alt="Utsaw Surya Logo" class="logo"/>
         <div class="brand-text">
           <h1>Utsaw Surya</h1>
-          <p class="tag">Premium Indian Kitchenware</p>
+          <p class="tag">Premium Kitchenware</p>
         </div>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false">☰</button>
+      </a>
+      
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#featured">Products</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#quality">Quality</a></li>
-        <li><a href="#dealers">Dealers</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#calculator">Dealer ROI</a></li>
+        <li><a href="#dealers">Become a Dealer</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="container hero-inner">
         <div class="hero-content">
-          <h2 class="eyebrow">Handcrafted for the Indian Kitchen</h2>
-          <h1 class="hero-title">Utsaw Surya — Where Tradition Meets Premium Craftsmanship</h1>
-          <p class="lead">Explore elegantly designed pressure cookers, gas stoves and cookware built for durability and modern Indian taste.</p>
-          <p class="hero-ctas">
-            <a class="btn primary" href="#featured">Shop Featured</a>
-            <a class="btn ghost" href="#dealers">Become a Dealer</a>
-          </p>
+          <span class="eyebrow">Handcrafted For The Indian Kitchen</span>
+          <h1 class="hero-title">Utsaw Surya — Where Tradition Meets Modern Craftsmanship</h1>
+          <p class="lead">Discover heavy-gauge pressure cookers, toughened glass gas stoves, and tri-ply cookware designed for unmatched safety, durability, and elegance.</p>
+          <div class="hero-ctas">
+            <a class="btn primary btn-lg" href="#products">Explore Products</a>
+            <a class="btn ghost btn-lg" href="#calculator">Dealer Profit Calculator</a>
+          </div>
           <ul class="hero-features">
-            <li>Trusted Indian quality</li>
-            <li>Premium materials & finish</li>
-            <li>Nationwide dealer network</li>
+            <li>Food-Grade Stainless Steel</li>
+            <li>5-Year Manufacturer Warranty</li>
+            <li>Nationwide Dealer Network</li>
           </ul>
         </div>
         <div class="hero-media">
-          <img class="product-large" src="assets/images/featured-1.svg" srcset="assets/images/featured-1.svg 1600w, assets/images/featured-1.svg 900w" sizes="(max-width: 900px) 100vw, 420px" alt="Premium cookware banner - Utsaw Surya">
+          <img class="product-large" src="assets/images/hero-cooker.jpg" alt="Surya Royal Tri-Ply Pressure Cooker">
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section about container">
-      <div class="grid">
-        <div>
-          <h2>About Utsaw Surya</h2>
-          <p>Utsaw Surya celebrates the heart of Indian kitchens. We craft premium pressure cookers, gas stoves and cookware with a focus on safety, longevity and an aesthetic that blends tradition with contemporary design. Our mission is to bring world-class kitchenware to every Indian home and professional kitchen.</p>
-          <p><strong>Contact:</strong> +91 9229219230 | <a href="mailto:utsawkitchen01@gmail.com">utsawkitchen01@gmail.com</a></p>
-        </div>
-        <div>
-          <div class="card about-stats">
-            <h3>Our Promise</h3>
-            <ul>
-              <li>Premium-grade materials</li>
-              <li>Rigorous safety and durability testing</li>
-              <li>Thoughtful Indian design</li>
-              <li>Dedicated dealer support</li>
-            </ul>
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-content">
+          <span class="eyebrow">Our Legacy</span>
+          <h2>Crafted With Safety, Built For Generations</h2>
+          <p>Utsaw Surya was created with a clear mission: to bring professional-grade, highly safe, and durable kitchenware to every household in India. Headquartered near Trends Mall at Arya Samaj Chowk, Motihari, we specialize in high-efficiency cookware tailored for authentic Indian cooking.</p>
+          <p>From pressure cookers engineered with multi-stage safety valves to toughened glass gas stoves built for heavy daily usage, every Utsaw Surya appliance combines engineering precision with timeless aesthetics.</p>
+          
+          <div class="about-highlights">
+            <div class="about-box">
+              <h4>Safety First</h4>
+              <p>Certified gaskets, precision weight valves & explosion-proof plugs.</p>
+            </div>
+            <div class="about-box">
+              <h4>Dealer First</h4>
+              <p>Lucrative wholesale margins, marketing collateral & prompt dispatch.</p>
+            </div>
           </div>
+        </div>
+        <div class="about-media">
+          <img src="assets/images/cookware-set.jpg" alt="Utsaw Surya Cookware Collection" class="product-large">
         </div>
       </div>
     </section>
 
-    <!-- Featured Products -->
-    <section id="featured" class="section featured container">
-      <h2>Featured Products</h2>
-      <p class="section-sub">Handpicked bestsellers — curated for performance and elegance.</p>
-      <div class="products-grid">
-        <!-- Product Card -->
-        <article class="product-card">
-          <img loading="lazy" src="assets/images/featured-1.svg" alt="Classic Pressure Cooker">
-          <div class="product-body">
-            <h3>Classic Pressure Cooker</h3>
-            <p class="desc">Stainless steel body with precision safety valves. Available in 3L, 5L, 7L.</p>
-            <div class="card-cta">
-              <a class="btn" href="#contact">Enquire</a>
-              <a class="btn outline" href="#">View</a>
-            </div>
-          </div>
-        </article>
+    <!-- Products Catalog Section -->
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Bestselling Collection</span>
+          <h2>Featured Products & Appliances</h2>
+          <p class="section-sub">Filter by category or search our premium line-up of pressure cookers, stoves, and sets.</p>
+        </div>
 
-        <article class="product-card">
-          <img loading="lazy" src="assets/images/featured-2.jpg" alt="Deluxe Pressure Cooker">
-          <div class="product-body">
-            <h3>Deluxe Pressure Cooker</h3>
-            <p class="desc">Non-stick finish with advanced safety locking mechanism.</p>
-            <div class="card-cta">
-              <a class="btn" href="#contact">Enquire</a>
-              <a class="btn outline" href="#">View</a>
-            </div>
+        <!-- Catalog Controls -->
+        <div class="catalog-controls">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-category="all">All Items</button>
+            <button class="tab-btn" data-category="cookers">Pressure Cookers</button>
+            <button class="tab-btn" data-category="stoves">Gas Stoves</button>
+            <button class="tab-btn" data-category="cookware">Cookware Sets</button>
+            <button class="tab-btn" data-category="essentials">Essentials</button>
           </div>
-        </article>
 
-        <article class="product-card">
-          <img loading="lazy" src="assets/images/featured-3.jpg" alt="Kitchen Essentials">
-          <div class="product-body">
-            <h3>Kitchen Essentials Set</h3>
-            <p class="desc">Complete set of utensils and storage solutions for everyday cooking.</p>
-            <div class="card-cta">
-              <a class="btn" href="#contact">Enquire</a>
-              <a class="btn outline" href="#">View</a>
-            </div>
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="productSearch" placeholder="Search cookers, stoves...">
           </div>
-        </article>
+
+          <select id="categoryFilter" style="display:none;">
+            <option value="all">all</option>
+            <option value="cookers">cookers</option>
+            <option value="stoves">stoves</option>
+            <option value="cookware">cookware</option>
+            <option value="essentials">essentials</option>
+          </select>
+        </div>
+
+        <!-- Dynamic Product Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Rendered dynamically by main.js -->
+        </div>
       </div>
     </section>
 
-    <!-- Categories -->
-    <section id="categories" class="section container categories">
-      <h2>Product Categories</h2>
-      <div class="category-grid">
-        <div class="category">
-          <img src="assets/images/featured-1.svg" alt="Pressure Cookers">
-          <h4>Pressure Cookers</h4>
+    <!-- Dealer ROI Calculator Section -->
+    <section id="calculator" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Partner With Us</span>
+          <h2>Interactive Dealer Profitability Calculator</h2>
+          <p class="section-sub">Calculate your projected monthly earnings and annual ROI as an authorized Utsaw Surya distributor.</p>
         </div>
-        <div class="category">
-          <img src="assets/images/featured-4.jpg" alt="Gas Stoves">
-          <h4>Gas Stoves</h4>
-        </div>
-        <div class="category">
-          <img src="assets/images/featured-3.jpg" alt="Cookware">
-          <h4>Cookware & Sets</h4>
-        </div>
-        <div class="category">
-          <img src="assets/images/featured-2.jpg" alt="Kitchen Essentials">
-          <h4>Kitchen Essentials</h4>
+
+        <div class="calculator-section">
+          <div class="calc-grid">
+            <div class="calc-inputs">
+              <div class="input-group">
+                <label>Estimated Monthly Order Volume: <span id="calcUnitsValue">200 units</span></label>
+                <input type="range" id="calcUnits" min="50" max="1000" step="25" value="200">
+              </div>
+
+              <div class="input-group">
+                <label for="calcPrice">Average Wholesale Unit Price (₹)</label>
+                <input type="number" id="calcPrice" value="1650" min="500" step="50">
+              </div>
+
+              <div class="input-group">
+                <label>Target Retail Margin (%): <span id="calcMarginValue">30%</span></label>
+                <input type="range" id="calcMargin" min="15" max="50" step="5" value="30">
+              </div>
+            </div>
+
+            <div class="calc-results">
+              <div>
+                <h3>Projected Returns</h3>
+                <div class="res-row">
+                  <span>Wholesale Stock Cost:</span>
+                  <strong id="resOrderVal">₹3,30,000</strong>
+                </div>
+                <div class="res-row">
+                  <span>Gross Retail Value:</span>
+                  <strong id="resRevenue">₹4,29,000</strong>
+                </div>
+                <div class="res-row highlight">
+                  <span>Estimated Monthly Profit:</span>
+                  <strong id="resProfit">₹99,000</strong>
+                </div>
+                <div class="res-row">
+                  <span>Projected Annual Profit:</span>
+                  <strong id="resRoi">₹11,88,000</strong>
+                </div>
+              </div>
+              <a href="#dealers" class="btn primary btn-lg" style="margin-top: 20px;">Apply For Distributorship</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section id="quality" class="section container quality">
-      <h2>Why Choose Us</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <h3>Trusted Safety</h3>
-          <p>Multiple safety mechanisms and certified pressure technology keep your kitchen safe.</p>
+    <section id="quality" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Why Utsaw Surya</span>
+          <h2>Uncompromising Quality Standards</h2>
         </div>
-        <div class="feature">
-          <h3>Premium Materials</h3>
-          <p>Food-grade stainless steel and high-quality alloys ensure longevity.</p>
-        </div>
-        <div class="feature">
-          <h3>Indian Designed</h3>
-          <p>Designs created for Indian cooking styles and tastes.</p>
-        </div>
-        <div class="feature">
-          <h3>Dealer Support</h3>
-          <p>Dedicated support for dealers & distributors across India.</p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Certified Safety</h3>
+            <p>Multiple security valves and food-grade non-reactive steel certified for high-pressure Indian cooking.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Energy Efficient</h3>
+            <p>Tri-ply sandwich bottom spreads heat uniformly, saving up to 30% gas and cooking time.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <h3>Premium Finish</h3>
+            <p>Mirror polish exterior and ergonomic cool-touch bakelite handles with luxurious golden accents.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Dealer Network</h3>
+            <p>Dedicated account managers, marketing banners, and priority logistics support for all retail partners.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Quality Promise -->
-    <section id="promise" class="section container promise">
-      <h2>Our Quality Promise</h2>
-      <p>Every product goes through strict quality checks: material inspection, performance testing, and final finish review. We back our cookware with warranties and responsive after-sales support.</p>
-    </section>
+    <!-- Dealer Registration Form -->
+    <section id="dealers" class="section">
+      <div class="container">
+        <div class="dealer-section">
+          <div class="section-header">
+            <span class="eyebrow">Join Our Business Network</span>
+            <h2>Dealer & Distributor Enquiry</h2>
+            <p class="section-sub">Become a wholesale dealer in Bihar, Jharkhand or across India. Fill out the application form below.</p>
+          </div>
 
-    <!-- Dealers -->
-    <section id="dealers" class="section container dealers">
-      <h2>Dealer & Distributor Enquiry</h2>
-      <p>If you are interested in becoming a dealer or distributor, please get in touch. We offer competitive margins, training and promotional support.</p>
-      <form id="dealerForm" class="form grid-2">
-        <input required name="name" placeholder="Full name">
-        <input required name="company" placeholder="Company / Shop name">
-        <input required name="phone" placeholder="Phone number">
-        <input name="email" placeholder="Email (optional)">
-        <textarea name="message" rows="4" placeholder="Tell us about your location and business"></textarea>
-        <button class="btn primary" type="submit">Send Enquiry</button>
-      </form>
+          <form id="dealerForm" class="form-grid">
+            <input required type="text" name="name" placeholder="Full Name *">
+            <input required type="text" name="company" placeholder="Business / Shop Name *">
+            <input required type="tel" name="phone" placeholder="Mobile / Phone Number *">
+            <input type="text" name="city" placeholder="City / District (e.g. Motihari, Patna, Muzaffarpur)">
+            <input type="email" name="email" placeholder="Email Address (Optional)" class="full-width">
+            <textarea name="message" rows="4" placeholder="Tell us about your current business and retail location..." class="full-width"></textarea>
+            <div class="full-width" style="text-align: center;">
+              <button class="btn primary btn-lg" type="submit">Submit Dealer Application</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="section container testimonials">
-      <h2>Customer Testimonials</h2>
-      <div class="test-grid">
-        <blockquote>
-          "The Classic Pressure Cooker from Utsaw Surya is robust, safe and looks beautiful in our kitchen."<cite>— Rekha, Patna</cite>
-        </blockquote>
-        <blockquote>
-          "Excellent heat distribution and quick service from their dealer network."<cite>— Manish, Delhi</cite>
-        </blockquote>
+    <section id="testimonials" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Trust & Reviews</span>
+          <h2>What Our Customers & Dealers Say</h2>
+        </div>
+
+        <div class="test-grid">
+          <div class="test-card">
+            <p>"The Surya Tri-Ply pressure cooker cooks dal and rice faster than any brand we used before. The lid safety mechanism gives complete peace of mind."</p>
+            <cite>— Rekha Sharma, Patna</cite>
+          </div>
+          <div class="test-card">
+            <p>"As a wholesale dealer in Motihari, Utsaw Surya products are our top seller. Customers love the build quality and warranty service."</p>
+            <cite>— Manish Kumar, Retailer (Motihari)</cite>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Image Gallery -->
-    <section id="gallery" class="section container gallery">
-      <h2>Image Gallery</h2>
-      <div class="gallery-grid">
-        <img loading="lazy" src="assets/images/featured-3.jpg" alt="gallery">
-        <img loading="lazy" src="assets/images/featured-4.jpg" alt="gallery">
-        <img loading="lazy" src="assets/images/featured-2.jpg" alt="gallery">
-        <img loading="lazy" src="assets/images/pressure-white.jpg" alt="gallery">
-      </div>
-    </section>
+    <!-- FAQ Accordion -->
+    <section id="faq" class="section faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Got Questions?</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
 
-    <!-- FAQ -->
-    <section id="faq" class="section container faq">
-      <h2>FAQ</h2>
-      <details>
-        <summary>What materials do you use?</summary>
-        <p>We primarily use food-grade stainless steel and high-quality alloys suitable for Indian cooking.</p>
-      </details>
-      <details>
-        <summary>Do you provide warranties?</summary>
-        <p>Yes — most products come with manufacturer warranties. Contact support for specifics.</p>
-      </details>
-      <details>
-        <summary>How can I become a dealer?</summary>
-        <p>Use the Dealer Enquiry form above or contact us at +91 9229219230.</p>
-      </details>
+        <div style="max-width: 800px; margin: 0 auto;">
+          <details>
+            <summary>What materials are used in Utsaw Surya pressure cookers?</summary>
+            <p>We use heavy-gauge 18/8 food-grade stainless steel with tri-ply technology (aluminum core sandwiched between steel layers) for optimal heat distribution and maximum longevity.</p>
+          </details>
+          <details>
+            <summary>Do Utsaw Surya products work on Induction Cooktops?</summary>
+            <p>Yes — all our tri-ply pressure cookers, stainless steel kadhais, and non-stick cookware are fully compatible with both Induction cooktops and traditional gas stoves.</p>
+          </details>
+          <details>
+            <summary>What warranty is offered on products?</summary>
+            <p>Our pressure cookers come with a 5-Year Manufacturer Warranty. Gas stoves and cookware sets come with a 2 to 3-Year warranty covering manufacturing defects.</p>
+          </details>
+          <details>
+            <summary>How can I become an authorized dealer or distributor?</summary>
+            <p>You can fill out the Dealer Enquiry form above or contact us directly on WhatsApp (+91 9229219230). Our sales team will reach out with catalog pricing and wholesale margins.</p>
+          </details>
+        </div>
+      </div>
     </section>
 
     <!-- Contact & Map -->
-    <section id="contact" class="section container contact">
-      <h2>Contact Information</h2>
-      <div class="grid contact-grid">
-        <div>
-          <p><strong>Utsaw Surya</strong></p>
-          <p>Utsaw Surya, near Trends Mall, Arya Samaj Chowk, Motihari, 845401</p>
-          <p>Phone: <a href="tel:+919229219230">+91 9229219230</a></p>
-          <p>Email: <a href="mailto:utsawkitchen01@gmail.com">utsawkitchen01@gmail.com</a></p>
-          <div class="socials">
-            <a target="_blank" rel="noopener" href="#">Instagram</a>
-            <a target="_blank" rel="noopener" href="#">Facebook</a>
-            <a target="_blank" rel="noopener" href="#">YouTube</a>
-          </div>
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Visit Our Store or Contact Us</h2>
         </div>
-        <div>
-          <div class="map-wrap">
-            <iframe loading="lazy" src="https://www.google.com/maps?q=Utsaw+Surya,+near+Trends+Mall,+Arya+Samaj+Chowk,+Motihari,+845401&output=embed" aria-hidden="false" aria-label="Utsaw Surya location on map"></iframe>
-          </div>
-        </div>
-      </div>
 
-      <div class="newsletter">
-        <h3>Newsletter</h3>
-        <p>Subscribe for product launches, offers and dealer updates.</p>
-        <form id="newsletterForm" class="newsletter-form">
-          <input id="newsletterEmail" type="email" placeholder="Your email" required>
-          <button class="btn primary" type="submit">Subscribe</button>
-        </form>
-        <p class="muted">We respect your privacy. No spam.</p>
+        <div class="contact-card-grid">
+          <div class="contact-info-box">
+            <h3>Utsaw Surya Kitchenware</h3>
+            <p style="color: var(--muted); margin-bottom: 24px;">Premium Indian Kitchen Essentials & Appliances</p>
+            
+            <div class="contact-item">
+              <span class="icon">📍</span>
+              <div>
+                <strong>Address:</strong><br>
+                Utsaw Surya, near Trends Mall, Arya Samaj Chowk, Motihari, Bihar 845401
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="icon">📞</span>
+              <div>
+                <strong>Phone / WhatsApp:</strong><br>
+                <a href="tel:+919229219230" style="color: var(--deep-burgundy); text-decoration: none; font-weight: 600;">+91 9229219230</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="icon">✉️</span>
+              <div>
+                <strong>Email:</strong><br>
+                <a href="mailto:utsawkitchen01@gmail.com" style="color: var(--deep-burgundy); text-decoration: none; font-weight: 600;">utsawkitchen01@gmail.com</a>
+              </div>
+            </div>
+
+            <form id="newsletterForm" style="margin-top: 24px; border-top: 1px solid var(--border); padding-top: 20px;">
+              <label style="font-weight: 600; font-size: 14px; display: block; margin-bottom: 8px;">Subscribe for Dealer Updates & Offers</label>
+              <div style="display: flex; gap: 8px;">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email..." required style="flex: 1; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+                <button class="btn primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="map-wrap">
+            <iframe loading="lazy" src="https://www.google.com/maps?q=Utsaw+Surya,+near+Trends+Mall,+Arya+Samaj+Chowk,+Motihari,+845401&output=embed" title="Utsaw Surya Motihari Location Map"></iframe>
+          </div>
+        </div>
       </div>
     </section>
-
   </main>
 
-  <!-- WhatsApp Button -->
-  <a id="whatsapp" class="whatsapp" href="https://wa.me/919229219230?text=Hello%20Utsaw%20Surya%20Team" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+  <!-- Floating WhatsApp Button -->
+  <a class="whatsapp-float" href="https://wa.me/919229219230?text=Hello%20Utsaw%20Surya%20Team" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+  <!-- Quick View Modal Container -->
+  <div id="quickViewModal" class="modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close" id="closeModalBtn" aria-label="Close modal">✕</button>
+      <div id="modalContentBody">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="assets/images/logo.svg" alt="Utsaw Surya logo"/>
-        <p>Utsaw Surya — Premium Indian Kitchenware</p>
+        <h2>Utsaw Surya</h2>
+        <p>Premium Indian Kitchenware & Household Appliances</p>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.6);">Motihari, Bihar — 845401</p>
       </div>
+
       <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#featured">Products</a>
-        <a href="#dealers">Dealers</a>
-        <a href="#contact">Contact</a>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#calculator">Dealer ROI</a></li>
+          <li><a href="#dealers">Become a Dealer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
+
       <div class="footer-contact">
-        <p>+91 9229219230</p>
-        <p><a href="mailto:utsawkitchen01@gmail.com">utsawkitchen01@gmail.com</a></p>
-        <div class="socials-sm">
-          <a href="#" aria-label="instagram">Instagram</a>
-          <a href="#" aria-label="facebook">Facebook</a>
-          <a href="#" aria-label="youtube">YouTube</a>
-        </div>
+        <h4>Direct Contact</h4>
+        <p>📞 +91 9229219230</p>
+        <p>✉️ utsawkitchen01@gmail.com</p>
+        <p>📍 Arya Samaj Chowk, Motihari</p>
       </div>
     </div>
+
     <div class="container copyright">
-      <small>&copy; Utsaw Surya — All rights reserved</small>
+      <p>&copy; 2026 Utsaw Surya. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Small JS: nav toggle and smooth scrolling
-    document.getElementById('navToggle').addEventListener('click', function(){
-      var links = document.getElementById('navLinks');
-      var expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!expanded));
-      links.classList.toggle('open');
-    });
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
-      anchor.addEventListener('click', function(e){
-        var target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          e.preventDefault();
-          target.scrollIntoView({behavior:'smooth', block:'start'});
-        }
-      });
-    });
-    // Basic form handlers to prevent page reload (can be hooked to a real endpoint)
-    var dealerForm = document.getElementById('dealerForm');
-    if(dealerForm){
-      dealerForm.addEventListener('submit', function(e){
-        e.preventDefault();
-        alert('Thank you — your dealer enquiry has been recorded. We will contact you soon.');
-        this.reset();
-      });
-    }
-    var newsletterForm = document.getElementById('newsletterForm');
-    if(newsletterForm){
-      newsletterForm.addEventListener('submit', function(e){
-        e.preventDefault();
-        alert('Thank you for subscribing to our newsletter.');
-        this.reset();
-      });
-    }
-  </script>
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
