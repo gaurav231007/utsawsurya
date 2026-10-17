@@ -1,6 +1,6 @@
 /**
- * Utsaw Surya — Interactive Web Application Logic
- * Premium Indian Kitchenware
+ * Utsaw Surya — Interactive Web Application Logic (updated)
+ * Premium Indian Kitchenware — navigation, back-to-top, product quick view, dealer form
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initDealerCalculator();
   initForms();
   initFAQ();
+  initBackToTop();
+  initFloatingButtons();
 });
 
 /* ----------------------------------------------------
@@ -177,18 +179,24 @@ function initProducts() {
             <span class="price-save">Save ${calcDiscount(p.price, p.mrp)}%</span>
           </div>
           <div class="card-cta">
-            <button class="btn primary quick-view-btn" data-id="${p.id}">Quick View</button>
-            <a class="btn outline" href="https://wa.me/919229219230?text=Hello%20Utsaw%20Surya%20Team%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}" target="_blank" rel="noopener">Inquire WhatsApp</a>
+            <button class="btn primary quick-view-btn" data-id="${p.id}">View Product</button>
+            <button class="btn outline get-enquiry-btn" data-name="${escapeHtmlAttr(p.name)}">Get Enquiry</button>
           </div>
         </div>
       </article>
     `).join('');
 
-    // Attach click listeners to Quick View buttons
     grid.querySelectorAll('.quick-view-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-id');
         openQuickViewModal(id);
+      });
+    });
+
+    grid.querySelectorAll('.get-enquiry-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-name') || '';
+        openDealerFormWithInterest(name);
       });
     });
   }
@@ -209,7 +217,6 @@ function initProducts() {
   if (searchInput) searchInput.addEventListener('input', filterItems);
   if (categoryFilter) categoryFilter.addEventListener('change', filterItems);
 
-  // Tab filter buttons
   const tabBtns = document.querySelectorAll('.tab-btn');
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -231,7 +238,6 @@ function initProducts() {
     });
   }
 
-  // Initial render
   renderProducts(PRODUCTS);
 }
 
@@ -273,6 +279,8 @@ function openQuickViewModal(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
 
+  const whatsappMsg = encodeURIComponent(`Hello Utsav Surya, I am interested in ${product.name}. Please share details.`);
+
   body.innerHTML = `
     <div class="modal-grid">
       <div class="modal-media">
@@ -288,7 +296,7 @@ function openQuickViewModal(productId) {
           <span class="price-save">Save ${calcDiscount(product.price, product.mrp)}%</span>
         </div>
         <p class="modal-desc">${product.shortDesc}</p>
-        
+
         <div class="modal-specs">
           <h4>Key Specifications</h4>
           <ul>
@@ -304,16 +312,20 @@ function openQuickViewModal(productId) {
         </div>
 
         <div class="modal-actions">
-          <a class="btn primary btn-lg" href="https://wa.me/919229219230?text=Hello%20Utsaw%20Surya%20Team%2C%20I%20want%20to%20place%20an%20order/enquiry%20for%20${encodeURIComponent(product.name)}%20(${product.price})" target="_blank" rel="noopener">
-            💬 Order / Inquire on WhatsApp
-          </a>
-          <a class="btn outline btn-lg" href="#dealers" onclick="closeQuickViewModal()">
-            Become a Dealer
-          </a>
+          <a class="btn primary btn-lg" href="https://wa.me/919229219230?text=${whatsappMsg}" target="_blank" rel="noopener" aria-label="WhatsApp product enquiry">WhatsApp Us</a>
+          <button class="btn outline btn-lg" id="modalGetEnquiry" type="button">Get Enquiry</button>
         </div>
       </div>
     </div>
   `;
+
+  const modalGetEnquiry = document.getElementById('modalGetEnquiry');
+  if (modalGetEnquiry) {
+    modalGetEnquiry.addEventListener('click', () => {
+      closeQuickViewModal();
+      openDealerFormWithInterest(product.name);
+    });
+  }
 
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -385,7 +397,6 @@ function initNavigation() {
       navToggle.innerHTML = open ? '✕' : '☰';
     });
 
-    // Close menu when clicking link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -395,7 +406,6 @@ function initNavigation() {
     });
   }
 
-  // Header scroll shadow
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
       header?.classList.add('scrolled');
@@ -404,22 +414,17 @@ function initNavigation() {
     }
   });
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      if (href === '#' || href.length <= 1) return;
+      if (!href || href === '#' || href.length <= 1) return;
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        const headerOffset = 70;
+        const headerOffset = 82;
         const elementPosition = target.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       }
     });
   });
@@ -442,8 +447,7 @@ function initForms() {
 
       showToast(`Thank you ${name}! Your dealer inquiry for ${company} has been recorded.`);
 
-      // Optional auto WhatsApp redirect for dealer
-      const waMsg = `Hello Utsaw Surya Team, I would like to register as a Dealer / Distributor.\n\nName: ${name}\nCompany: ${company}\nCity: ${city}\nPhone: ${phone}\nMessage: ${message}`;
+      const waMsg = `Hello Utsav Surya Team, I would like to register as a Dealer / Distributor.\n\nName: ${name}\nCompany: ${company}\nCity: ${city}\nPhone: ${phone}\nMessage: ${message}`;
       setTimeout(() => {
         window.open(`https://wa.me/919229219230?text=${encodeURIComponent(waMsg)}`, '_blank');
       }, 1200);
@@ -456,8 +460,8 @@ function initForms() {
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const email = document.getElementById('newsletterEmail')?.value;
-      showToast(`Subscribed successfully with ${email}! Welcome to Utsaw Surya updates.`);
+      const email = document.getElementById('newsletterEmail')?.value || 'your email';
+      showToast(`Subscribed successfully with ${email}! Welcome to Utsav Surya updates.`);
       newsletterForm.reset();
     });
   }
@@ -477,10 +481,7 @@ function showToast(message) {
   item.innerHTML = `<span>✓</span> <div>${message}</div>`;
   toast.appendChild(item);
 
-  setTimeout(() => {
-    item.classList.add('show');
-  }, 10);
-
+  setTimeout(() => { item.classList.add('show'); }, 10);
   setTimeout(() => {
     item.classList.remove('show');
     setTimeout(() => item.remove(), 300);
@@ -501,4 +502,82 @@ function initFAQ() {
       }
     });
   });
+}
+
+/* ----------------------------------------------------
+   7. BACK TO TOP & FLOATING BUTTONS
+---------------------------------------------------- */
+function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  const wa = document.querySelector('.whatsapp-float');
+  if (!btn) return;
+
+  function updatePosition() {
+    if (wa) {
+      const waRect = wa.getBoundingClientRect();
+      btn.style.right = (window.innerWidth <= 980) ? (waRect.width + 32) + 'px' : '20px';
+    } else {
+      btn.style.right = '20px';
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+
+  window.addEventListener('resize', updatePosition);
+  setTimeout(updatePosition, 50);
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+function initFloatingButtons() {
+  const wa = document.querySelector('.whatsapp-float');
+  if (!wa) return;
+  wa.setAttribute('aria-label', 'Chat with Utsav Surya on WhatsApp');
+
+  window.addEventListener('resize', () => {
+    const back = document.getElementById('backToTop');
+    if (!back) return;
+    if (window.innerWidth <= 980) {
+      back.style.right = '88px';
+    } else {
+      back.style.right = '20px';
+    }
+  });
+}
+
+/* ----------------------------------------------------
+   8. UTILITIES
+---------------------------------------------------- */
+function openDealerFormWithInterest(productName) {
+  const form = document.getElementById('dealerForm');
+  if (!form) {
+    const dealers = document.getElementById('dealers');
+    if (dealers) dealers.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+
+  const interest = form.querySelector('input[name="interest"]');
+  if (interest && productName) {
+    interest.value = productName;
+  }
+
+  const headerOffset = 82;
+  const rect = form.getBoundingClientRect();
+  const offsetPosition = rect.top + window.pageYOffset - headerOffset;
+  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+
+  const firstInput = form.querySelector('input, textarea, select');
+  if (firstInput) firstInput.focus({ preventScroll: true });
+}
+
+function escapeHtmlAttr(str) {
+  return String(str).replace(/\"/g, '&quot;').replace(/'/g, '&#39;');
 }
