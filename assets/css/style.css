@@ -25,6 +25,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
 
 body {
   margin: 0; padding: 0;
@@ -170,7 +171,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', Georgia, serif; color: var(
 .footer-links a { color: rgba(255,255,255,0.92); text-decoration:none; }
 
 /* Responsive tweaks */
-@media (max-width: 980px) {
+@media (max-width: 767px) {
   .hero-inner, .about-grid, .calc-grid { grid-template-columns: 1fr; }
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -187,4 +188,58 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', Georgia, serif; color: var(
   .card-img-wrap { height:200px; }
   .nav-links { width:calc(100% - 40px); }
   .back-to-top { bottom:92px; right:18px; }
+}
+
+/* --- Minimal overrides for WhatsApp and Back-to-top (keeps existing HTML/SVG/URL) --- */
+.whatsapp-float {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50% !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 9999 !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+.whatsapp-float .wa-svg { width: 28px !important; height: 28px !important; display: block !important; }
+.whatsapp-float .wa-label { margin-left: 8px !important; }
+
+/* Keep the existing small-screen 560px rules, but ensure whatsapp slightly smaller on narrowest screens */
+@media (max-width: 560px) {
+  .whatsapp-float { width: 56px !important; height: 56px !important; bottom: 18px !important; right: 18px !important; }
+  .whatsapp-float .wa-svg { width: 24px !important; height: 24px !important; }
+  .back-to-top { bottom: 92px !important; right: 18px !important; }
+}
+
+/* Back-to-top minimal styling and hidden-by-default behavior (visibility toggled by .show class) */
+.back-to-top {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  bottom: 96px !important;
+  right: 24px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(8px) !important;
+  transition: opacity .22s ease, transform .22s ease, visibility .22s !important;
+  z-index: 9998 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.back-to-top.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* Ensure .wa-label is hidden on mobile widths <= 767px (we updated the main mobile breakpoint above) */
+@media (max-width: 767px) {
+  .whatsapp-float .wa-label { display: none !important; }
+  /* mobile: place back-to-top above whatsapp */
+  .back-to-top { right: 18px !important; bottom: 88px !important; }
 }

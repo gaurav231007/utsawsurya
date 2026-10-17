@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuickViewModal();
   initDealerCalculator();
   initForms();
+  initBackToTop();
   initFAQ();
 });
 
@@ -501,4 +502,36 @@ function initFAQ() {
       }
     });
   });
+}
+/* Minimal Back-to-top initializer
+   - Uses existing #backToTop element
+   - Shows .show after window.scrollY > 200
+   - Smooth scrolls to top on click
+   - Guarded to avoid duplicate initialization
+*/
+function initBackToTop() {
+  const backBtn = document.getElementById('backToTop');
+  if (!backBtn) return;
+  if (backBtn.dataset.utsavInit === '1') return; // already initialized
+  backBtn.dataset.utsavInit = '1';
+
+  const SHOW_AFTER = 200;
+
+  function onScroll() {
+    if (window.scrollY > SHOW_AFTER) {
+      backBtn.classList.add('show');
+    } else {
+      backBtn.classList.remove('show');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // initialize visibility state
+  onScroll();
 }
