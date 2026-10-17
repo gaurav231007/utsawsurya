@@ -121,10 +121,11 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, serif; color:
   .hero-inner { grid-template-columns: 1fr; gap:18px; }
   .product-large { max-width: 420px; }
 }
-@media (max-width: 560px) {
+@media (max-width: 767px) {
   .products-grid { grid-template-columns: 1fr; }
   .card-img-wrap { height:220px; }
   .hero-title { font-size:22px; }
+  /* show hamburger and hide desktop nav for widths < 768px */
   .nav-toggle { display:block; }
   .nav-links { display:none; }
 }
