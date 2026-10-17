@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, serif; color:
 .section-header h2 { font-size:26px; margin-bottom:8px; }
 .section-sub { color:var(--muted); font-size:15px; }
 
-/* Catalog  Controls - refined */
+/* Catalog \u0006 Controls - refined */
 .catalog-controls { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:20px; background:transparent; padding:0; }
 .tab-buttons { display:flex; gap:8px; flex-wrap:wrap; }
 .tab-btn { background:transparent; border:1px solid transparent; padding:8px 12px; border-radius:999px; font-size:14px; font-weight:700; color:var(--muted); cursor:pointer; }
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, serif; color:
 .search-box input { width:100%; padding:10px 14px 10px 40px; border-radius:999px; border:1px solid var(--border); font-size:14px; background:var(--surface); }
 .search-icon { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--muted); }
 
-/* Products grid  controls */
+/* Products grid \u0006 controls */
 .products-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
 .product-card { background:var(--surface); border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(11,94,196,0.05); border:1px solid rgba(15,23,36,0.04); display:flex; flex-direction:column; transition: transform .18s ease, box-shadow .18s ease; min-height:420px; }
 .product-card:hover { transform: translateY(-6px); box-shadow:0 18px 40px rgba(11,94,196,0.08); }
