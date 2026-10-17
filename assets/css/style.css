@@ -237,3 +237,16 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', Georgia, serif; color: var(
   .nav-links { width:calc(100% - 40px); }
   .back-to-top { right:20px; bottom:85px; }
 }
+
+/* Navigation visibility - ensure clear 768px breakpoint */
+@media (max-width: 767px) {
+  /* Mobile: show hamburger, hide desktop links */
+  .nav-toggle { display: block; }
+  .nav-links { display: none; position: fixed; top: 72px; right: 18px; background: var(--surface); flex-direction: column; gap: 8px; padding: 12px; border-radius: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--border); width: calc(100% - 36px); }
+  .nav-links.open { display: flex; }
+}
+@media (min-width: 768px) {
+  /* Desktop/Tablet: hide hamburger, always show full nav */
+  .nav-toggle { display: none !important; }
+  .nav-links { display: flex !important; position: static !important; top: auto !important; right: auto !important; background: transparent !important; flex-direction: row !important; gap: 18px !important; padding: 0 !important; border-radius: 0 !important; box-shadow: none !important; border: none !important; width: auto !important; }
+}
