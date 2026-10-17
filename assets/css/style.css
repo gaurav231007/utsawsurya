@@ -1,1 +1,66 @@
-...
+/* ==========================================================================
+   Utsav Surya — Premium UI polish and responsive design upgrade
+   Goal: Improved typography, spacing, product presentation, header/nav and micro-interactions.
+   Preserves all existing markup, images, and JS behavior.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Color system - limited palette for premium, warm feel */
+  --bg: #fbfcfd; /* neutral background */
+  --surface: #ffffff;
+  --text: #0f1724; /* strong dark text */
+  --muted: #5b6670;
+  --primary: #0b5ec4; /* refined blue brand color */
+  --primary-dark: #063e86;
+  --accent: #d87a19; /* warm accent for highlights */
+  --whatsapp: #25D366; /* keep whatsapp green */
+  --border: rgba(15,23,36,0.06);
+  --shadow-sm: 0 6px 18px rgba(15,23,36,0.06);
+  --shadow-md: 0 14px 40px rgba(15,23,36,0.08);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --container: 1100px; /* slightly narrower for premium measure */
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0; padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+
+/* Headings (Playfair for headings) */
+h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, serif; color: var(--text); margin: 0; }
+
+/* Header & Navigation - compact, accessible */
+.site-header { position: sticky; top: 0; z-index: 1100; background: rgba(255,255,255,0.98); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
+.nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; gap:16px; }
+.brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.logo { width:52px; height:52px; border-radius:10px; object-fit:cover; border:1px solid rgba(11,102,214,0.06); }
+.brand-text h1, .brand-text h2 { margin:0; font-size:16px; font-weight:700; color:var(--text); }
+.brand-text .tag { margin:0; font-size:11px; color:var(--muted); font-weight:700; letter-spacing:0.6px; text-transform:uppercase; }
+
+/* Desktop nav */
+.nav-links { list-style:none; display:flex; gap:18px; margin:0; padding:0; align-items:center; }
+.nav-links a { text-decoration:none; color:var(--text); font-weight:600; font-size:15px; transition: color .14s ease, transform .14s ease; padding:8px 10px; border-radius:8px; }
+.nav-links a:hover, .nav-links a:focus { color:var(--primary); transform: translateY(-2px); outline: none; }
+.nav-cta { padding:8px 14px; }
+
+/* Hamburger - only shown on mobile via media queries */
+.nav-toggle { display:none; background:transparent; border:none; font-size:22px; color:var(--text); cursor:pointer; padding:8px; border-radius:8px; }
+.nav-toggle:focus { outline: 2px solid var(--primary); }
+
+/* Buttons - cleaner flat style */
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 18px; border-radius:10px; font-size:14px; font-weight:700; text-decoration:none; cursor:pointer; trans[...]
