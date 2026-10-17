@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDealerCalculator();
   initForms();
   initFAQ();
+  initFloatingControls(); // manage back-to-top and ensure floating controls initialize
 });
 
 /* ----------------------------------------------------
@@ -178,7 +179,12 @@ function initProducts() {
           </div>
           <div class="card-cta">
             <button class="btn primary quick-view-btn" data-id="${p.id}">Quick View</button>
-            <a class="btn outline" href="https://wa.me/919229219230?text=Hello%20Utsaw%20Surya%20Team%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}" target="_blank" rel="noopener">Inquire WhatsApp</a>
+            <a class="btn whatsapp" href="https://wa.me/919229219230?text=${encodeURIComponent('Hello Utsav Surya, I am interested in ' + p.name)}" target="_blank" rel="noopener" aria-label="WhatsApp enquiry for ${p.name}">
+              <span class="wa-icon" aria-hidden="true">
+                <svg class="wa-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M20.52 3.48A11.88 11.88 0 0 0 12.08 0C5.54 0 .22 5.32.22 11.86c0 2.09.55 4.13 1.6 5.92L.12 24l6.36-1.7c1.73.95 3.73 1.45 5.6 1.45 6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.42-8.34zM12.08 21.54c-1.6 0-3.16-.43-4.53-1.24l-.33-.2-3.8 1.02 1.02-3.73-.21-.35a9.2 9.2 0 0 1-1.39-4.92c0-5.09 4.14-9.23 9.23-9.23 2.48 0 4.8.97 6.54 2.72a9.2 9.2 0 0 1 2.72 6.54c0 5.09-4.14 9.23-9.23 9.23zM17.42 14.34c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.67.15-.2.29-.77.95-.95 1.15-.17.2-.35.22-.64.07-.29-.15-1.22-.45-2.33-1.45-.86-.77-1.44-1.73-1.61-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.53.15-.18.2-.29.29-.48.1-.2.02-.37-.01-.52-.03-.15-.67-1.6-.92-2.19-.24-.57-.49-.49-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.29.29-1.08 1.05-1.08 2.57 0 1.52 1.1 2.98 1.25 3.19.15.2 2.16 3.3 5.24 4.63 3.08 1.35 3.08.9 3.64.84.56-.07 1.72-.7 1.96-1.39.23-.68.23-1.27.17-1.39-.06-.12-.28-.2-.57-.35z"/></svg>
+              </span>
+              <span class="wa-label">WhatsApp</span>
+            </a>
           </div>
         </div>
       </article>
@@ -304,8 +310,11 @@ function openQuickViewModal(productId) {
         </div>
 
         <div class="modal-actions">
-          <a class="btn primary btn-lg" href="https://wa.me/919229219230?text=Hello%20Utsaw%20Surya%20Team%2C%20I%20want%20to%20place%20an%20order/enquiry%20for%20${encodeURIComponent(product.name)}%20(${product.price})" target="_blank" rel="noopener">
-            💬 Order / Inquire on WhatsApp
+          <a class="btn whatsapp btn-lg" href="https://wa.me/919229219230?text=${encodeURIComponent('Hello Utsav Surya Team, I want to enquire about ' + product.name)}" target="_blank" rel="noopener" aria-label="WhatsApp enquiry for ${product.name}">
+            <span class="wa-icon" aria-hidden="true">
+              <svg class="wa-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M20.52 3.48A11.88 11.88 0 0 0 12.08 0C5.54 0 .22 5.32.22 11.86c0 2.09.55 4.13 1.6 5.92L.12 24l6.36-1.7c1.73.95 3.73 1.45 5.6 1.45 6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.42-8.34zM12.08 21.54c-1.6 0-3.16-.43-4.53-1.24l-.33-.2-3.8 1.02 1.02-3.73-.21-.35a9.2 9.2 0 0 1-1.39-4.92c0-5.09 4.14-9.23 9.23-9.23 2.48 0 4.8.97 6.54 2.72a9.2 9.2 0 0 1 2.72 6.54c0 5.09-4.14 9.23-9.23 9.23zM17.42 14.34c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.67.15-.2.29-.77.95-.95 1.15-.17.2-.35.22-.64.07-.29-.15-1.22-.45-2.33-1.45-.86-.77-1.44-1.73-1.61-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.53.15-.18.2-.29.29-.48.1-.2.02-.37-.01-.52-.03-.15-.67-1.6-.92-2.19-.24-.57-.49-.49-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.29.29-1.08 1.05-1.08 2.57 0 1.52 1.1 2.98 1.25 3.19.15.2 2.16 3.3 5.24 4.63 3.08 1.35 3.08.9 3.64.84.56-.07 1.72-.7 1.96-1.39.23-.68.23-1.27.17-1.39-.06-.12-.28-.2-.57-.35z"/></svg>
+            </span>
+            <span class="wa-label">WhatsApp</span>
           </a>
           <a class="btn outline btn-lg" href="#dealers" onclick="closeQuickViewModal()">
             Become a Dealer
@@ -404,7 +413,7 @@ function initNavigation() {
     }
   });
 
-  // Smooth scroll
+  // Smooth scroll for internal anchors (already present site-wide)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -422,6 +431,39 @@ function initNavigation() {
         });
       }
     });
+  });
+}
+
+/* ----------------------------------------------------
+   4.1 Floating controls: Back to Top visibility & handlers
+---------------------------------------------------- */
+function initFloatingControls() {
+  const backBtn = document.getElementById('backToTop');
+  const whatsappFloat = document.querySelector('.whatsapp-float');
+  if (!backBtn) return;
+
+  // Ensure buttons are clickable and visible
+  backBtn.style.pointerEvents = 'auto';
+  if (whatsappFloat) whatsappFloat.style.pointerEvents = 'auto';
+
+  // Initially hidden state
+  backBtn.classList.remove('show');
+
+  // Show after user scrolls ~400px
+  function toggleBackBtn() {
+    if (window.scrollY > 400) {
+      backBtn.classList.add('show');
+    } else {
+      backBtn.classList.remove('show');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBackBtn, { passive: true });
+  toggleBackBtn();
+
+  backBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
