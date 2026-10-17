@@ -206,7 +206,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', Georgia, serif; color: var(
   border: none !important;
 }
 .whatsapp-float .wa-svg { width: 28px !important; height: 28px !important; display: block !important; }
-.whatsapp-float .wa-label { margin-left: 8px !important; }
+.whatsapp-float .wa-label { display: none !important; }
 
 /* Keep the existing small-screen 560px rules, but ensure whatsapp slightly smaller on narrowest screens */
 @media (max-width: 560px) {
