@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://utsawsurya.com/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://utsawsurya.com/images/file_0000000094e48211a0aa520ecc2e9c82.png</image:loc>
+      <image:title>Utsav Surya premium cookware collection</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://utsawsurya.com/images/file_0000000073c882118707ee79c6b464c9.png</image:loc>
+      <image:title>Utsav Surya cookware lifestyle collection</image:title>
+    </image:image>
   </url>
 </urlset>
