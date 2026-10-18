@@ -28,7 +28,7 @@ function renderProducts() {
   if (!grid) return;
   grid.innerHTML = items.map(product => `
     <article class="product-card">
-      <div class="product-image"><img src="${product.image}" alt="${product.name}" loading="lazy" width="1200" height="800"></div>
+      <div class="product-image"><img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="800"></div>
       <div class="product-info">
         <span class="product-category">${product.category}</span>
         <h3>${product.name}</h3>
@@ -47,7 +47,7 @@ function openProduct(product) {
   if (!modal || !content) return;
   content.innerHTML = `
     <div class="quick-content">
-      <div class="quick-image-wrap"><img src="${product.image}" alt="${product.name}" width="1200" height="800"></div>
+      <div class="quick-image-wrap"><img src="${product.image}" alt="${product.name}" decoding="async" width="1200" height="800"></div>
       <div>
         <span class="product-category">${product.category}</span>
         <h2>${product.name}</h2>
