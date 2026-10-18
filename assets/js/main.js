@@ -12,6 +12,15 @@ const $ = selector => document.querySelector(selector);
 const $$ = selector => document.querySelectorAll(selector);
 let currentCategory = "all";
 
+function optimizedImage(path, width = 1200) {
+  const source = `raw.githubusercontent.com/gaurav231007/utsawsurya/fix/logo-favicon/${path}`;
+  return `https://images.weserv.nl/?url=${encodeURIComponent(source)}&w=${width}&output=webp&q=78`;
+}
+
+function optimizedSrcset(path) {
+  return `${optimizedImage(path, 480)} 480w, ${optimizedImage(path, 768)} 768w, ${optimizedImage(path, 1200)} 1200w`;
+}
+
 function enquiryUrl(name) {
   const message = `Hello Utsav Surya, I would like to enquire about ${name}. Please share the product details, availability and current price.`;
   return `https://wa.me/919229219230?text=${encodeURIComponent(message)}`;
@@ -28,7 +37,7 @@ function renderProducts() {
   if (!grid) return;
   grid.innerHTML = items.map(product => `
     <article class="product-card">
-      <div class="product-image"><img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="800"></div>
+      <div class="product-image"><img src="${optimizedImage(product.image, 1200)}" srcset="${optimizedSrcset(product.image)}" sizes="(max-width: 560px) 100vw, (max-width: 850px) 50vw, 33vw" alt="${product.name}" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="800"></div>
       <div class="product-info">
         <span class="product-category">${product.category}</span>
         <h3>${product.name}</h3>
@@ -47,7 +56,7 @@ function openProduct(product) {
   if (!modal || !content) return;
   content.innerHTML = `
     <div class="quick-content">
-      <div class="quick-image-wrap"><img src="${product.image}" alt="${product.name}" decoding="async" width="1200" height="800"></div>
+      <div class="quick-image-wrap"><img src="${optimizedImage(product.image, 1200)}" alt="${product.name}" decoding="async" width="1200" height="800"></div>
       <div>
         <span class="product-category">${product.category}</span>
         <h2>${product.name}</h2>
