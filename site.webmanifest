@@ -3,13 +3,13 @@
   "short_name": "Utsav Surya",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f5f1e9",
-  "theme_color": "#241711",
+  "background_color": "#fafaf7",
+  "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/assets/images/logo-hero.jpg",
+      "src": "/images/utsav-surya-favicon.svg",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/svg+xml",
       "purpose": "any"
     }
   ]
