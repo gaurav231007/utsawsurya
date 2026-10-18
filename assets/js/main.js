@@ -1,12 +1,11 @@
 const PRODUCTS = [
-  {name:"Utsav Surya Stainless Steel Pressure Cooker",category:"cookers",image:"assets/images/pressure-cooker.jpg",description:"A polished stainless-steel pressure cooker photographed for the Utsav Surya kitchen collection.",features:["Stainless-steel construction","Everyday Indian cooking","Ask our team for size, availability and price"]},
-  {name:"Utsav Surya 3-Burner Gas Stove",category:"stoves",image:"assets/images/gas-stove.jpg",description:"A practical three-burner gas stove presented in a clean commercial kitchen setting.",features:["Three-burner layout","Stable everyday cooking surface","Ask our team for availability and price"]},
-  {name:"Utsav Surya Premium Cookware Set",category:"cookware",image:"assets/images/cookware-set.jpg",description:"A coordinated stainless-steel cookware collection for everyday Indian cooking.",features:["Multi-piece cookware collection","Stainless-steel finish","Ask about current configuration and availability"]},
-  {name:"Utsav Surya Kadai & Pots",category:"cookware",image:"assets/images/kadai-pots.jpg",description:"Versatile kadai and pot formats for frying, sautéing, gravies and family meals.",features:["Deep kadai format","Everyday cooking range","Ask our team for sizes and availability"]},
-  {name:"Utsav Surya Fry Pan & Tawa",category:"cookware",image:"assets/images/fry-pan-tawa.jpg",description:"Practical flat and pan cookware for rotis, dosas and quick everyday meals.",features:["Flat cooking surface","Fry-pan format","Ask our team for current sizes"]},
-  {name:"Utsav Surya Combo Cookware Set",category:"cookware",image:"assets/images/combo-set.jpg",description:"A practical combination of cookware pieces designed around everyday kitchen needs.",features:["Coordinated cookware selection","Everyday Indian cooking","Ask our team for configuration and availability"]},
-  {name:"Utsav Surya Kitchen Essentials",category:"essentials",image:"assets/images/kitchen-essentials.jpg",description:"Useful everyday kitchen tools and accessories presented in a professional product setting.",features:["Daily kitchen essentials","Practical tool collection","Ask our team for current availability"]},
-  {name:"Utsav Surya Storage Solutions",category:"storage",image:"assets/images/storage-solutions.jpg",description:"Clean, practical storage containers for an organised kitchen and pantry.",features:["Everyday pantry storage","Stainless-steel look","Ask our team for sizes and availability"]}
+  {name:"Utsav Surya Stainless Steel Pressure Cooker",category:"cookers",image:"assets/images/hero-cooker.jpg",description:"A polished stainless-steel pressure cooker presented in a premium Indian kitchen setting.",features:["Stainless-steel finish","Everyday Indian cooking","Ask our team for size, availability and current price"]},
+  {name:"Utsav Surya 3-Burner Gas Stove",category:"stoves",image:"assets/images/gas-stove.jpg",description:"A clean three-burner gas stove designed for practical everyday cooking.",features:["Three-burner layout","Stable cooking surface","Ask our team for availability and current price"]},
+  {name:"Utsav Surya Non-Stick Cookware Collection",category:"cookware",image:"assets/images/cookware-set.jpg",description:"A coordinated non-stick cookware range for everyday frying, sautéing and family meals.",features:["Non-stick cookware formats","Practical everyday range","Ask about sizes and availability"]},
+  {name:"Utsav Surya Stainless Steel Cookware Collection",category:"cookware",image:"assets/images/cookware-set.jpg",description:"Classic stainless-steel cookware for dependable everyday Indian cooking.",features:["Stainless-steel construction","Multiple cookware formats","Ask about current configuration"]},
+  {name:"Utsav Surya Complete Cookware Collection",category:"cookware",image:"assets/images/cookware-set.jpg",description:"A mixed cookware collection bringing everyday pots, pans and pressure-cooking formats together.",features:["Coordinated collection","Multiple cooking formats","Ask our team for configuration and availability"]},
+  {name:"Utsav Surya Red Non-Stick Cookware Set",category:"cookware",image:"assets/images/cookware-set.jpg",description:"A bold red non-stick cookware collection with coordinated pieces for the modern Indian kitchen.",features:["Red non-stick finish","Coordinated set","Ask about sizes and availability"]},
+  {name:"Utsav Surya Storage & Dabbas",category:"storage",image:"assets/images/cookware-set.jpg",description:"Practical pantry storage and dabbas for a cleaner, more organised kitchen.",features:["Pantry storage solutions","Everyday household use","Ask our team for sizes and availability"]}
 ];
 
 const $ = selector => document.querySelector(selector);
@@ -29,7 +28,7 @@ function renderProducts() {
   if (!grid) return;
   grid.innerHTML = items.map(product => `
     <article class="product-card">
-      <div class="product-image"><img src="${product.image}" alt="${product.name}" loading="lazy" width="900" height="675"></div>
+      <div class="product-image"><img src="${product.image}" alt="${product.name}" loading="lazy" width="1200" height="800"></div>
       <div class="product-info">
         <span class="product-category">${product.category}</span>
         <h3>${product.name}</h3>
@@ -48,7 +47,7 @@ function openProduct(product) {
   if (!modal || !content) return;
   content.innerHTML = `
     <div class="quick-content">
-      <div class="quick-image-wrap"><img src="${product.image}" alt="${product.name}" width="900" height="675"></div>
+      <div class="quick-image-wrap"><img src="${product.image}" alt="${product.name}" width="1200" height="800"></div>
       <div>
         <span class="product-category">${product.category}</span>
         <h2>${product.name}</h2>
