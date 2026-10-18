@@ -1,9 +1,16 @@
 {
-  "name": "Utsaw Surya",
-  "short_name": "Utsaw Surya",
+  "name": "Utsav Surya",
+  "short_name": "Utsav Surya",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f7f1eb",
-  "theme_color": "#2A170E",
-  "icons": [{"src":"/images/utsav-surya-favicon.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any"}]
+  "background_color": "#fafaf7",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/images/utsav-surya-favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }

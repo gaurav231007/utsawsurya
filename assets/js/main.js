@@ -1,1 +1,126 @@
-const PRODUCTS=[{name:"Utsav Surya Royal Tri-Ply Pressure Cooker",category:"cookers",image:"assets/images/hero-cooker.jpg",description:"A refined everyday pressure cooker for dependable Indian cooking.",features:["Everyday cooking focused design","Easy-to-use pressure cooking format","Available for retail and dealer enquiry"]},{name:"Utsav Surya Deluxe Hard Anodized Pressure Cooker",category:"cookers",image:"assets/images/hero-cooker.jpg",description:"A practical pressure cooker designed for regular home cooking.",features:["Durable everyday finish","Kitchen-friendly form","Ask our team for size availability"]},{name:"Utsav Surya Optima 3-Burner Glass Top Gas Stove",category:"stoves",image:"assets/images/gas-stove.jpg",description:"A clean, contemporary gas stove designed for busy Indian kitchens.",features:["Three-burner layout","Modern glass-top aesthetic","Product availability on enquiry"]},{name:"Utsav Surya Elite Granite Cookware Set",category:"cookware",image:"assets/images/cookware-set.jpg",description:"A coordinated cookware collection that brings a polished look to everyday meals.",features:["Multi-piece everyday set","Contemporary kitchen aesthetic","Ask about current configurations"]},{name:"Utsav Surya Imperial Stainless Steel Kadhai",category:"cookware",image:"assets/images/kitchen-essentials.jpg",description:"A versatile everyday kadhai for frying, sautéing and family meals.",features:["Everyday cooking essential","Classic Indian kitchen form","Sizes available subject to stock"]},{name:"Utsav Surya Multi-Purpose Idli & Steamer Set",category:"essentials",image:"assets/images/kitchen-essentials.jpg",description:"A practical steaming essential for breakfasts, snacks and family cooking.",features:["Multi-purpose kitchen use","Designed for regular cooking","Enquire for current availability"]}];const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);let currentCategory="all";function enquiryUrl(name){return `https://wa.me/919229219230?text=${encodeURIComponent(`Hello Utsav Surya, I would like to enquire about ${name}. Please share the product details, availability and price.`)}`}function renderProducts(){const q=($('#productSearch')?.value||'').toLowerCase();const items=PRODUCTS.filter(p=>(currentCategory==='all'||p.category===currentCategory)&&(`${p.name} ${p.category} ${p.description}`).toLowerCase().includes(q));const grid=$('#productsGrid');if(!grid)return;grid.innerHTML=items.map(p=>`<article class="product-card"><div class="product-image"><img src="${p.image}" alt="${p.name}" loading="lazy"></div><div class="product-info"><span class="product-category">${p.category}</span><h3>${p.name}</h3><p>${p.description}</p><div class="product-actions"><button class="btn dark quick-btn" data-index="${PRODUCTS.indexOf(p)}">View Product</button><a class="btn outline" href="${enquiryUrl(p.name)}" target="_blank" rel="noopener">Enquire for Price</a></div></div></article>`).join('')||'<p>No products matched your search.</p>'}function openProduct(p){const modal=$('#quickView');const content=$('#quickViewContent');content.innerHTML=`<div class="quick-content"><img src="${p.image}" alt="${p.name}"><div><span class="product-category">${p.category}</span><h2>${p.name}</h2><p>${p.description}</p><ul class="spec-list">${p.features.map(x=>`<li>${x}</li>`).join('')}</ul><div class="actions"><a class="btn dark" href="${enquiryUrl(p.name)}" target="_blank" rel="noopener">WhatsApp Enquiry</a><a class="btn outline" href="tel:+919229219230">Call Us</a></div></div></div>`;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}function closeModal(){const m=$('#quickView');m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow=''}document.addEventListener('DOMContentLoaded',()=>{renderProducts();$('#year').textContent=new Date().getFullYear();$('#navToggle')?.addEventListener('click',()=>$('#navLinks').classList.toggle('open'));$$('.nav-links a').forEach(a=>a.addEventListener('click',()=>$('#navLinks').classList.remove('open')));$$('.pill').forEach(btn=>btn.addEventListener('click',()=>{$$('.pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');currentCategory=btn.dataset.category;renderProducts()}));$('#productSearch')?.addEventListener('input',renderProducts);$('#productsGrid')?.addEventListener('click',e=>{const b=e.target.closest('.quick-btn');if(b)openProduct(PRODUCTS[Number(b.dataset.index)])});$$('[data-close]').forEach(x=>x.addEventListener('click',closeModal));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});$('#dealerForm')?.addEventListener('submit',e=>{e.preventDefault();const data=new FormData(e.currentTarget);const text=`Hello Utsav Surya, I would like to make an enquiry. Name: ${data.get('name')||''}. Business: ${data.get('company')||''}. Phone: ${data.get('phone')||''}. City: ${data.get('city')||''}. Message: ${data.get('message')||''}`;window.open(`https://wa.me/919229219230?text=${encodeURIComponent(text)}`,'_blank');showToast('Opening WhatsApp enquiry…');e.currentTarget.reset()})});function showToast(message){const t=document.createElement('div');t.className='toast';t.textContent=message;document.body.appendChild(t);setTimeout(()=>t.remove(),2600)}
+const PRODUCTS = [
+  {name:"Utsav Surya Stainless Steel Pressure Cooker",category:"cookers",image:"images/file_000000003b8c82119da80c057f10cb5b.png",description:"A polished stainless-steel pressure cooker presented for dependable everyday Indian cooking.",features:["Stainless-steel finish","Everyday Indian cooking","Ask our team for size, availability and current price"]},
+  {name:"Utsav Surya 3-Burner Gas Stove",category:"stoves",image:"images/file_000000003b148211b8d56aa499dc8443.png",description:"A practical three-burner gas stove with a clean black finish for everyday Indian kitchens.",features:["Three-burner layout","Stable cooking surface","Ask our team for availability and current price"]},
+  {name:"Utsav Surya Non-Stick Cookware Collection",category:"cookware",image:"images/file_0000000078b48211a298a18928789dfd.png",description:"A coordinated black non-stick cookware range for frying, sautéing and everyday family meals.",features:["Non-stick cookware formats","Practical everyday range","Ask about sizes and availability"]},
+  {name:"Utsav Surya Stainless Steel Cookware Collection",category:"cookware",image:"images/file_00000000bd7c8211ab2956ac17ddc00c.png",description:"Classic stainless-steel cookware with multiple formats for dependable everyday Indian cooking.",features:["Stainless-steel construction","Multiple cookware formats","Ask about current configuration"]},
+  {name:"Utsav Surya Mixed Cookware Collection",category:"cookware",image:"images/file_0000000091888211b5e76f90f55d0920.png",description:"A complete mixed cookware collection bringing everyday pots, pans and pressure-cooking formats together.",features:["Coordinated collection","Multiple cooking formats","Ask our team for configuration and availability"]},
+  {name:"Utsav Surya Red Non-Stick Cookware Set",category:"cookware",image:"images/file_00000000280c8211b859170a7e42416d.png",description:"A bold red non-stick cookware collection with coordinated pieces for the modern Indian kitchen.",features:["Red non-stick finish","Coordinated set","Ask about sizes and availability"]},
+  {name:"Utsav Surya Storage & Dabbas",category:"storage",image:"images/file_00000000549482119dc37304baa357e1.png",description:"Practical pantry storage and dabbas for a cleaner, more organised kitchen.",features:["Pantry storage solutions","Everyday household use","Ask our team for sizes and availability"]}
+];
+
+const $ = selector => document.querySelector(selector);
+const $$ = selector => document.querySelectorAll(selector);
+let currentCategory = "all";
+
+function optimizedImage(path, width = 1200) {
+  const source = `raw.githubusercontent.com/gaurav231007/utsawsurya/fix/logo-favicon/${path}`;
+  return `https://images.weserv.nl/?url=${encodeURIComponent(source)}&w=${width}&output=webp&q=78`;
+}
+
+function optimizedSrcset(path) {
+  return `${optimizedImage(path, 480)} 480w, ${optimizedImage(path, 768)} 768w, ${optimizedImage(path, 1200)} 1200w`;
+}
+
+function enquiryUrl(name) {
+  const message = `Hello Utsav Surya, I would like to enquire about ${name}. Please share the product details, availability and current price.`;
+  return `https://wa.me/919229219230?text=${encodeURIComponent(message)}`;
+}
+
+function renderProducts() {
+  const query = ($('#productSearch')?.value || '').trim().toLowerCase();
+  const items = PRODUCTS.filter(product => {
+    const matchesCategory = currentCategory === 'all' || product.category === currentCategory;
+    const haystack = `${product.name} ${product.category} ${product.description}`.toLowerCase();
+    return matchesCategory && haystack.includes(query);
+  });
+  const grid = $('#productsGrid');
+  if (!grid) return;
+  grid.innerHTML = items.map(product => `
+    <article class="product-card">
+      <div class="product-image"><img src="${optimizedImage(product.image, 1200)}" srcset="${optimizedSrcset(product.image)}" sizes="(max-width: 560px) 100vw, (max-width: 850px) 50vw, 33vw" alt="${product.name}" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="800"></div>
+      <div class="product-info">
+        <span class="product-category">${product.category}</span>
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <div class="product-actions">
+          <button class="btn btn-dark quick-btn" type="button" data-index="${PRODUCTS.indexOf(product)}">View product</button>
+          <a class="btn btn-outline" href="${enquiryUrl(product.name)}" target="_blank" rel="noopener noreferrer">Enquire</a>
+        </div>
+      </div>
+    </article>`).join('') || '<p class="no-products">No products matched your search.</p>';
+}
+
+function openProduct(product) {
+  const modal = $('#quickView');
+  const content = $('#quickViewContent');
+  if (!modal || !content) return;
+  content.innerHTML = `
+    <div class="quick-content">
+      <div class="quick-image-wrap"><img src="${optimizedImage(product.image, 1200)}" alt="${product.name}" decoding="async" width="1200" height="800"></div>
+      <div>
+        <span class="product-category">${product.category}</span>
+        <h2>${product.name}</h2>
+        <p>${product.description}</p>
+        <ul class="spec-list">${product.features.map(feature => `<li>${feature}</li>`).join('')}</ul>
+        <div class="actions">
+          <a class="btn btn-dark" href="${enquiryUrl(product.name)}" target="_blank" rel="noopener noreferrer">WhatsApp enquiry</a>
+          <a class="btn btn-outline" href="tel:+919229219230">Call us</a>
+        </div>
+      </div>
+    </div>`;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const modal = $('#quickView');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2600);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderProducts();
+  const year = $('#year');
+  if (year) year.textContent = new Date().getFullYear();
+  $('#navToggle')?.addEventListener('click', () => {
+    const nav = $('#navLinks');
+    const button = $('#navToggle');
+    const open = nav?.classList.toggle('open');
+    button?.setAttribute('aria-expanded', String(Boolean(open)));
+  });
+  $$('.nav-links a').forEach(link => link.addEventListener('click', () => {
+    $('#navLinks')?.classList.remove('open');
+    $('#navToggle')?.setAttribute('aria-expanded', 'false');
+  }));
+  $$('.pill').forEach(button => button.addEventListener('click', () => {
+    $$('.pill').forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    currentCategory = button.dataset.category || 'all';
+    renderProducts();
+  }));
+  $('#productsGrid')?.addEventListener('click', event => {
+    const button = event.target.closest('.quick-btn');
+    if (button) openProduct(PRODUCTS[Number(button.dataset.index)]);
+  });
+  $$('[data-close]').forEach(element => element.addEventListener('click', closeModal));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
+  $('#dealerForm')?.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const text = `Hello Utsav Surya, I would like to make an enquiry. Name: ${data.get('name') || ''}. Business: ${data.get('company') || ''}. Phone: ${data.get('phone') || ''}. City: ${data.get('city') || ''}. Requirement: ${data.get('message') || ''}`;
+    window.open(`https://wa.me/919229219230?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    showToast('Opening WhatsApp enquiry…');
+    event.currentTarget.reset();
+  });
+});
